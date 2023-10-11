@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chromebook Screen Destroyer Simulator</title>
+    <style>
+        /* Hide the cursor */
+        html, body {
+            cursor: none;
+        }
+        
+        /* Create the loading screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+        }
+        
+        #loading-container {
+            width: 300px;
+            height: 20px;
+            background-color: #555;
+            border-radius: 10px;
+            overflow: hidden;
+            perspective: 1000px;
+            position: relative;
+        }
+        
+        #progress-bar {
+            width: 0;
+            height: 100%;
+            background-color: #00ff00;
+            transform-origin: left center;
+            transition: width 0.5s ease-in-out;
+        }
+
+        #loading-text {
+            color: #0f0;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            letter-spacing: 4px;
+        }
+
+        /* Create the "destroyed" effect */
+        body {
+            background-color: black;
+            opacity: 0;
+            animation: screenDestroy 5s infinite;
+        }
+        
+        @keyframes screenDestroy {
+            0% {
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                background-color: red;
+            }
+            20% {
+                opacity: 1;
+                background-color: green;
+            }
+            30% {
+                opacity: 1;
+                background-color: blue;
+            }
+            40% {
+                opacity: 1;
+                background-color: yellow;
+            }
+            50% {
+                opacity: 1;
+                background-color: purple;
+            }
+            60% {
+                opacity: 1;
+                background-color: cyan;
+            }
+            70Certainly! Here's the complete code:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chromebook Screen Destroyer Simulator</title>
+    <style>
+        /* Hide the cursor */
+        html, body {
+            cursor: none;
+        }
+        
+        /* Create the loading screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+        }
+        
+        #loading-container {
+            width: 300px;
+            height: 20px;
+            background-color: #555;
+            border-radius: 10px;
+            overflow: hidden;
+            perspective: 1000px;
+            position: relative;
+        }
+        
+        #progress-bar {
+            width: 0;
+            height: 100%;
+            background-color: #00ff00;
+            transform-origin: left center;
+            transition: width 0.5s ease-in-out;
+        }
+
+        #loading-text {
+            color: #0f0;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            letter-spacing: 4px;
+        }
+
+        /* Create the "destroyed" effect */
+        body {
+            background-color: black;
+            opacity: 0;
+            animation: screenDestroy 5s infinite;
+        }
+        
+        @keyframes screenDestroy {
+            0% {
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                background-color: red;
+            }
+            20% {
+                opacity: 1;
+                background-color: green;
+            }
+            30% {
+                opacity: 1;
+                background-color: blue;
+            }
+            40% {
+                opacity: 1;
+                background-color: yellow;
+            }
+            50% {
+                opacity: 1;
+                background-color: purple;
+            }
+            60% {
+                opacity: 1;
+                background-color: cyan;
+            }
+            70% {
+                opacity: 1;
+                background-color: magenta;
+            }
+            80% {
+                opacity: 1;
+                background-color: orange;
+            }
+            90% {
+                opacity: 1;
+                background-color: pink;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div id="loading-container">
+            <div id="progress-bar"></div>
+            <div id="loading-text">LOADING...</div>
+        </div>
+    </div>
+
+    <script>
+        // Disable right-click on the page
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+        
+        // Disable keyboard inputs on the page
+        document.addEventListener('keydown', function (e) {
+            e.preventDefault();
+        });
+
+        // Wait for the HTML to load before hiding the loading screen
+        document.addEventListener('DOMContentLoaded', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            var progressBar = document.getElementById('progress-bar');
+
+            // Simulate loading progress
+            var progress = 0;
+            var progressInterval = setInterval(function() {
+                progress += 10;
+                progressBar.style.width = progress + '%';
+
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                    loadingScreen.style.display = 'none';
+                    document.body.style.opacity = 1;
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
